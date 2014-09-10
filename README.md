@@ -1,4 +1,4 @@
 glass-gdk-progressbar
 =====================
 
-ProgressBar for Glass GDK (Updated XE21)
+ProgressBar for Glass GDK (Updated to XE21)
