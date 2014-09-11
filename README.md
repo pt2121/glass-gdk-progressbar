@@ -9,7 +9,7 @@ The XE21 just came out so here is the updated progress bar!
 
 #####Gradle
 ```
-compile 'com.github.prt2121:ProgressBar:0.9'
+compile 'com.github.prt2121:ProgressBar:0.9@aar'
 ```
 
 ###Usage
