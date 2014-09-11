@@ -1,13 +1,15 @@
 glass-gdk-progressbar
 =====================
 
+Work In Progress
+
 Painless ProgressBar for Glass GDK (Updated to XE21)
 
 The XE21 just came out so here is the updated progress bar!
 
-Here's an example:
+###Usage
 
-```
+```java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,4 +18,22 @@ Here's an example:
         mSliderView.startProgress(5 * 1000); // 5 seconds
         // mSliderView.startIndeterminate();
     }
+```
+
+###Including In Your Project
+
+#####Maven
+
+```
+<dependency>
+  <groupId>com.github.prt2121</groupId>
+  <artifactId>ProgressBar</artifactId>
+  <version>0.9</version>
+  <type>aar</type>
+</dependency>
+```
+
+#####Gradle
+```
+compile 'com.github.prt2121:ProgressBar:0.9'
 ```
