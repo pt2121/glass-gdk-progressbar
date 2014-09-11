@@ -16,8 +16,9 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        mSliderView = (SliderView) findViewById(R.id.indeterm_slider);
-        mSliderView.startIndeterminate();
+        mSliderView = (SliderView) findViewById(R.id.slider);
+        mSliderView.startProgress(10 * 1000);
+        //mSliderView.startIndeterminate();
     }
 
 

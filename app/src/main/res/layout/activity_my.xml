@@ -5,7 +5,7 @@
     tools:context="com.prt2121.glassprogressbar.MyActivity">
 
     <com.prt2121.glass.widget.SliderView
-        android:id="@+id/indeterm_slider"
+        android:id="@+id/slider"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
