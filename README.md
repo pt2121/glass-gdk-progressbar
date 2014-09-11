@@ -8,7 +8,7 @@ The XE21 just came out so here is the updated progress bar!
 Here's an example:
 
 ```
-@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
