@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.prt2121.glass.widget.SliderView;
 
 
-public class MyActivity extends Activity {
+public class ProgressActivity extends Activity {
 
     private SliderView mSliderView;
 
@@ -17,8 +17,7 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         mSliderView = (SliderView) findViewById(R.id.slider);
-        mSliderView.startProgress(10 * 1000);
-        //mSliderView.startIndeterminate();
+        mSliderView.startProgress(5 * 1000); // 5 seconds
     }
 
 
