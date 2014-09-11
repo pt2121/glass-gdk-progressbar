@@ -1,11 +1,16 @@
 glass-gdk-progressbar
 =====================
 
-Work In Progress
-
 Painless ProgressBar for Glass GDK (Updated to XE21)
 
 The XE21 just came out so here is the updated progress bar!
+
+###Including In Your Project
+
+#####Gradle
+```
+compile 'com.github.prt2121:ProgressBar:0.9'
+```
 
 ###Usage
 
@@ -20,20 +25,3 @@ The XE21 just came out so here is the updated progress bar!
     }
 ```
 
-###Including In Your Project
-
-#####Maven
-
-```
-<dependency>
-  <groupId>com.github.prt2121</groupId>
-  <artifactId>ProgressBar</artifactId>
-  <version>0.9</version>
-  <type>aar</type>
-</dependency>
-```
-
-#####Gradle
-```
-compile 'com.github.prt2121:ProgressBar:0.9'
-```
