@@ -1,4 +1,4 @@
-glass-gdk-progressbar
+Glass GDK Progressbar
 =====================
 
 Painless ProgressBar for Glass GDK (Updated to XE21)
