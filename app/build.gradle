@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId "com.prt2121.glassprogressbar"
         minSdkVersion 19
-        targetSdkVersion 20
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
     }

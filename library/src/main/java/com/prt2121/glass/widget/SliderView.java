@@ -55,7 +55,9 @@ public class SliderView extends FrameLayout {
         setLayoutParams(new android.widget.FrameLayout.LayoutParams(-1, getResources().getDimensionPixelSize(R.dimen.slider_bar_height)));
         LayoutInflater.from(getContext()).inflate(R.layout.slider, this);
         slider = findViewById(R.id.slider_control);
+        //slider.setBackgroundColor(context.getResources().getColor(android.R.color.holo_blue_bright));
         indeterminateSlider = (IndeterminateProgressView) findViewById(R.id.indeterminate_slider);
+        indeterminateSlider.setBackgroundColor(context.getResources().getColor(android.R.color.holo_blue_bright));
         hideSlider(false);
         hideIndeterminateSlider(false);
     }
