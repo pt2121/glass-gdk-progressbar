@@ -32,6 +32,7 @@ public class IndeterminateProgressView extends View {
 
     public IndeterminateProgressView(Context context, AttributeSet attributeset, int i) {
         super(context, attributeset, i);
+        //WHITE_PAINT.setColor(context.getResources().getColor(android.R.color.holo_blue_bright));
         gaps = new int[6];
         setBackgroundColor(context.getResources().getColor(android.R.color.transparent));
         height = context.getResources().getDimension(R.dimen.slider_bar_height);
