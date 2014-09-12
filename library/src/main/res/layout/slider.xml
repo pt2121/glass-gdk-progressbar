@@ -12,7 +12,6 @@
 
     <com.prt2121.glass.widget.IndeterminateProgressView
         android:id="@+id/indeterminate_slider"
-        android:background="@drawable/slider_indeterminate"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/slider_bar_height" />
 
