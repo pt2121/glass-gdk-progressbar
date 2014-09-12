@@ -263,27 +263,27 @@ public class SliderView extends FrameLayout {
     }
 
     public void startProgress(long l) {
-        startProgress(l, ((TimeInterpolator) (new AccelerateDecelerateInterpolator())));
+        startProgress(l, new AccelerateDecelerateInterpolator());
     }
 
-    public void startProgress(long l, android.animation.Animator.AnimatorListener animatorlistener) {
-        startProgress(l, ((TimeInterpolator) (new AccelerateDecelerateInterpolator())), animatorlistener);
+    public void startProgress(long l, android.animation.Animator.AnimatorListener animatorListener) {
+        startProgress(l, new AccelerateDecelerateInterpolator(), animatorListener);
     }
 
-    public void startProgress(long l, TimeInterpolator timeinterpolator) {
-        startProgress(l, timeinterpolator, null);
+    public void startProgress(long l, TimeInterpolator timeInterpolator) {
+        startProgress(l, timeInterpolator, null);
     }
 
-    public void startProgress(long l, TimeInterpolator timeinterpolator, android.animation.Animator.AnimatorListener animatorlistener) {
+    public void startProgress(long l, TimeInterpolator timeinterpolator, android.animation.Animator.AnimatorListener animatorListener) {
         hideIndeterminateSlider(true);
         slider.setTranslationX(0.0F);
         showSlider(false);
         int i = getResources().getDisplayMetrics().widthPixels;
-        android.widget.FrameLayout.LayoutParams layoutparams = (android.widget.FrameLayout.LayoutParams) slider.getLayoutParams();
-        layoutparams.width = i;
-        layoutparams.setMargins(-i, 0, 0, 0);
-        slider.setLayoutParams(layoutparams);
-        progressAnimator = slider.animate().translationX(i).setDuration(l).setInterpolator(timeinterpolator).setListener(animatorlistener);
+        android.widget.FrameLayout.LayoutParams layoutParams = (android.widget.FrameLayout.LayoutParams) slider.getLayoutParams();
+        layoutParams.width = i;
+        layoutParams.setMargins(-i, 0, 0, 0);
+        slider.setLayoutParams(layoutParams);
+        progressAnimator = slider.animate().translationX(i).setDuration(l).setInterpolator(timeinterpolator).setListener(animatorListener);
         progressAnimator.start();
     }
 

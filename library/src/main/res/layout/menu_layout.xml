@@ -14,7 +14,7 @@
         android:layout_height="fill_parent">
 
         <ImageView
-            android:id="@id/icon"
+            android:id="@+id/icon"
             android:layout_width="@dimen/menu_icon_size"
             android:layout_height="@dimen/menu_icon_size"
             android:layout_marginRight="@dimen/menu_icon_margin"
@@ -23,7 +23,7 @@
         <TextView
             android:textSize="@dimen/menu_text_size"
             android:ellipsize="end"
-            android:id="@id/label"
+            android:id="@+id/label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true" />
@@ -31,7 +31,7 @@
     </LinearLayout>
 
     <com.w9jds.gdk_progress_widget.SliderView
-        android:id="@id/slider"
+        android:id="@+id/slider"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-12px"/>
