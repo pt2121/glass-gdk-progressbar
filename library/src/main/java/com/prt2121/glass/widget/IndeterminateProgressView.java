@@ -17,7 +17,7 @@ public class IndeterminateProgressView extends View {
     private static final int MINIMUM_FRAME_DELAY_MS = 16;
     private static final int NUM_GAPS = 3;
     private static final float SPEED_PIXELS_MS = 0.4F;
-    private static final Paint WHITE_PAINT;
+    private static final Paint PAINT;
     final int gaps[];
     private final float height;
     private boolean running;
@@ -32,10 +32,14 @@ public class IndeterminateProgressView extends View {
 
     public IndeterminateProgressView(Context context, AttributeSet attributeset, int i) {
         super(context, attributeset, i);
-        //WHITE_PAINT.setColor(context.getResources().getColor(android.R.color.holo_blue_bright));
+        //PAINT.setColor(context.getResources().getColor(android.R.color.holo_blue_bright));
         gaps = new int[6];
         setBackgroundColor(context.getResources().getColor(android.R.color.transparent));
         height = context.getResources().getDimension(R.dimen.slider_bar_height);
+    }
+
+    public void setProgressColor(int color) {
+        PAINT.setColor(color);
     }
 
     private void connect(Canvas canvas, int i, int j) {
@@ -50,7 +54,7 @@ public class IndeterminateProgressView extends View {
     }
 
     private void drawRect(Canvas canvas, int i, int j) {
-        canvas.drawRect(i, 0.0F, j, height, WHITE_PAINT);
+        canvas.drawRect(i, 0.0F, j, height, PAINT);
     }
 
     private void drawRects(Canvas canvas, int ai[]) {
@@ -100,7 +104,7 @@ public class IndeterminateProgressView extends View {
     }
 
     static {
-        WHITE_PAINT = new Paint();
-        WHITE_PAINT.setColor(-1);
+        PAINT = new Paint();
+        PAINT.setColor(-1);
     }
 }

@@ -4,6 +4,8 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,7 @@ public class SliderView extends FrameLayout {
     private final View slider;
     private boolean sliderShowing;
     private boolean sliderWasShowing;
+    private int mProgressColor, mBackgroundColor;
 
     public SliderView(Context context) {
         this(context, null);
@@ -39,8 +42,20 @@ public class SliderView extends FrameLayout {
         this(context, attributeset, 0);
     }
 
-    public SliderView(Context context, AttributeSet attributeset, int i) {
-        super(context, attributeset, i);
+    public SliderView(Context context, AttributeSet attrs, int i) {
+        super(context, attrs, i);
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.ProgressBar,
+                0, 0);
+
+        try {
+            mProgressColor = a.getColor(R.styleable.ProgressBar_progress_color, Color.WHITE);
+            mBackgroundColor = a.getColor(R.styleable.ProgressBar_background_color, Color.TRANSPARENT);
+        } finally {
+            a.recycle();
+        }
+
         count = 0;
         animatedCount = 0.0F;
         index = 0.0F;
@@ -55,8 +70,12 @@ public class SliderView extends FrameLayout {
         setLayoutParams(new android.widget.FrameLayout.LayoutParams(-1, getResources().getDimensionPixelSize(R.dimen.slider_bar_height)));
         LayoutInflater.from(getContext()).inflate(R.layout.slider, this);
         slider = findViewById(R.id.slider_control);
+        // TODO
+        slider.setBackgroundColor(mProgressColor);
         //slider.setBackgroundColor(context.getResources().getColor(android.R.color.holo_blue_bright));
         indeterminateSlider = (IndeterminateProgressView) findViewById(R.id.indeterminate_slider);
+        // TODO
+        indeterminateSlider.setProgressColor(mProgressColor);
         //indeterminateSlider.setBackgroundColor(context.getResources().getColor(android.R.color.holo_blue_bright));
         hideSlider(false);
         hideIndeterminateSlider(false);
@@ -167,10 +186,10 @@ public class SliderView extends FrameLayout {
             hideSlider(true);
             return;
         }
-        android.widget.FrameLayout.LayoutParams layoutparams = (android.widget.FrameLayout.LayoutParams) slider.getLayoutParams();
-        layoutparams.width = (int) ((1.0F / slideableScale) * (float) getBaseSliderWidth());
-        layoutparams.leftMargin = 0;
-        slider.setLayoutParams(layoutparams);
+        android.widget.FrameLayout.LayoutParams params = (android.widget.FrameLayout.LayoutParams) slider.getLayoutParams();
+        params.width = (int) ((1.0F / slideableScale) * (float) getBaseSliderWidth());
+        params.leftMargin = 0;
+        slider.setLayoutParams(params);
         if (flag) {
             showSlider(true);
         }
@@ -220,7 +239,12 @@ public class SliderView extends FrameLayout {
         setManualProgress(f, false);
     }
 
-    public void setManualProgress(float f, boolean flag) {
+    /**
+     *
+     * @param percent
+     * @param animate
+     */
+    public void setManualProgress(float percent, boolean animate) {
         hideIndeterminateSlider(true);
         showSlider(false);
         int i = getResources().getDisplayMetrics().widthPixels;
@@ -228,11 +252,11 @@ public class SliderView extends FrameLayout {
         layoutParams.width = i;
         layoutParams.setMargins(-i, 0, 0, 0);
         slider.setLayoutParams(layoutParams);
-        if (flag) {
-            slider.animate().translationX(f * (float) i);
+        if (animate) {
+            slider.animate().translationX(percent * (float) i);
             return;
         } else {
-            slider.setTranslationX(f * (float) i);
+            slider.setTranslationX(percent * (float) i);
             return;
         }
     }
@@ -264,19 +288,19 @@ public class SliderView extends FrameLayout {
         indeterminateSlider.start();
     }
 
-    public void startProgress(long l) {
-        startProgress(l, new AccelerateDecelerateInterpolator());
+    public void startProgress(long milliseconds) {
+        startProgress(milliseconds, new AccelerateDecelerateInterpolator());
     }
 
-    public void startProgress(long l, android.animation.Animator.AnimatorListener animatorListener) {
-        startProgress(l, new AccelerateDecelerateInterpolator(), animatorListener);
+    public void startProgress(long milliseconds, android.animation.Animator.AnimatorListener animatorListener) {
+        startProgress(milliseconds, new AccelerateDecelerateInterpolator(), animatorListener);
     }
 
-    public void startProgress(long l, TimeInterpolator timeInterpolator) {
-        startProgress(l, timeInterpolator, null);
+    public void startProgress(long milliseconds, TimeInterpolator timeInterpolator) {
+        startProgress(milliseconds, timeInterpolator, null);
     }
 
-    public void startProgress(long l, TimeInterpolator timeinterpolator, android.animation.Animator.AnimatorListener animatorListener) {
+    public void startProgress(long milliseconds, TimeInterpolator timeinterpolator, android.animation.Animator.AnimatorListener animatorListener) {
         hideIndeterminateSlider(true);
         slider.setTranslationX(0.0F);
         showSlider(false);
@@ -285,7 +309,7 @@ public class SliderView extends FrameLayout {
         layoutParams.width = i;
         layoutParams.setMargins(-i, 0, 0, 0);
         slider.setLayoutParams(layoutParams);
-        progressAnimator = slider.animate().translationX(i).setDuration(l).setInterpolator(timeinterpolator).setListener(animatorListener);
+        progressAnimator = slider.animate().translationX(i).setDuration(milliseconds).setInterpolator(timeinterpolator).setListener(animatorListener);
         progressAnimator.start();
     }
 
