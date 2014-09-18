@@ -29,6 +29,10 @@ compile 'com.github.prt2121:ProgressBar:1.0@aar'
 
 ![screenshot 01](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen01.png)
 
+screen record
+
+![gif 02](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/video2.gif)
+
 ```
     <com.prt2121.glass.widget.SliderView
         android:id="@+id/slider_top"
@@ -46,6 +50,10 @@ compile 'com.github.prt2121:ProgressBar:1.0@aar'
 ```
 
 ![screenshot 02](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen02.png)
+
+screen record
+
+![gif 02](https://github.com/prt2121/glass-gdk-progressbar/blob/master/screenshot/video.gif)
 
 ```
     <com.prt2121.glass.widget.SliderView
