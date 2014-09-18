@@ -23,6 +23,8 @@ compile 'com.github.prt2121:ProgressBar:1.0@aar'
     }
 ```
 
+![screenshot 00](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen00.png)
+
 
 ![screenshot 01](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen01.png)
 
@@ -42,7 +44,7 @@ compile 'com.github.prt2121:ProgressBar:1.0@aar'
         app:progress_color="@android:color/holo_blue_bright" />
 ```
 
-![screenshot 01](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen02.png)
+![screenshot 02](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen02.png)
 
 ```
     <com.prt2121.glass.widget.SliderView
