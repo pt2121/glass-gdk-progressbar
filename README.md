@@ -7,7 +7,7 @@ Painless ProgressBar for Glass GDK!
 
 #####Gradle
 ```
-compile 'com.github.prt2121:ProgressBar:0.9@aar'
+compile 'com.github.prt2121:ProgressBar:1.0@aar'
 ```
 
 ###Usage
