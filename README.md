@@ -25,6 +25,7 @@ compile 'com.github.prt2121:ProgressBar:1.0@aar'
 
 ![screenshot 00](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen00.png)
 
+**Changing the color in xml**
 
 ![screenshot 01](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen01.png)
 
