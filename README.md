@@ -18,18 +18,15 @@ compile 'com.github.prt2121:ProgressBar:1.0@aar'
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         mSliderView = (SliderView) findViewById(R.id.slider);
-        mSliderView.startProgress(5 * 1000); // 5 seconds
+        mSliderView.startProgress(5 * 1000, animatorListener); // 5 seconds with listener
+        // mSliderView.startProgress(5 * 1000); // 5 seconds without listener
         // mSliderView.startIndeterminate();
     }
 ```
 
-![screenshot 00](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen00.png)
 
 **Changing the color in xml**
 
-![screenshot 01](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen01.png)
-
-screen record
 
 ![gif 02](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/video2.gif)
 
@@ -48,8 +45,6 @@ screen record
         android:layout_alignParentBottom="true"
         app:progress_color="@android:color/holo_blue_bright" />
 ```
-
-![screenshot 02](https://raw.githubusercontent.com/prt2121/glass-gdk-progressbar/master/screenshot/screen02.png)
 
 screen record
 
