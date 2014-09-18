@@ -1,7 +1,9 @@
 package com.prt2121.glassprogressbar;
 
+import android.animation.Animator;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -10,11 +12,13 @@ import com.prt2121.glass.widget.SliderView;
 
 public class MyActivity extends Activity {
 
+    private static final String TAG = MyActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        ((SliderView) findViewById(R.id.slider_bottom)).startProgress(5 * 1000);
+        ((SliderView) findViewById(R.id.slider_bottom)).startProgress(5 * 1000, animatorListener);
         ((SliderView) findViewById(R.id.slider_top)).startIndeterminate();
     }
 
@@ -37,4 +41,27 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    Animator.AnimatorListener animatorListener = new Animator.AnimatorListener() {
+
+        @Override
+        public void onAnimationStart(Animator animation) {
+            Log.v(TAG, "#onAnimationStart");
+        }
+
+        @Override
+        public void onAnimationEnd(Animator animation) {
+            Log.v(TAG, "#onAnimationEnd");
+        }
+
+        @Override
+        public void onAnimationCancel(Animator animation) {
+            Log.v(TAG, "#onAnimationCancel");
+        }
+
+        @Override
+        public void onAnimationRepeat(Animator animation) {
+            Log.v(TAG, "#onAnimationRepeat");
+        }
+    };
 }
