@@ -15,6 +15,7 @@
         android:id="@+id/slider_bottom"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        app:progress_color="@android:color/holo_blue_bright" />
 
 </RelativeLayout>
