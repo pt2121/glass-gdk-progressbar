@@ -46,8 +46,6 @@ compile 'com.github.prt2121:ProgressBar:1.0@aar'
         app:progress_color="@android:color/holo_blue_bright" />
 ```
 
-screen record
-
 ![gif 02](https://github.com/prt2121/glass-gdk-progressbar/blob/master/screenshot/video.gif)
 
 ```
