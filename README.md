@@ -1,6 +1,8 @@
 Glass GDK Progressbar
 =====================
 
+[![Build Status](https://travis-ci.org/prt2121/glass-gdk-progressbar.svg?branch=master)](https://travis-ci.org/prt2121/glass-gdk-progressbar)
+
 Painless ProgressBar for Glass GDK!
 
 ###Including In Your Project
