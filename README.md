@@ -1,6 +1,8 @@
 Glass GDK Progressbar
 =====================
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.prt2121/ProgressBar/badge.png?style=flat)](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser)
+
 [![Build Status](https://travis-ci.org/prt2121/glass-gdk-progressbar.svg?branch=master)](https://travis-ci.org/prt2121/glass-gdk-progressbar)
 
 Painless ProgressBar for Glass GDK!
