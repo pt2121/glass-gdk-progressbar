@@ -7,6 +7,7 @@ android:
   components:
     - build-tools-20.0.0
     - android-19
+    - addon-google_gdk-google-19
 
 notifications:
   email: false
